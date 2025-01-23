@@ -1,0 +1,581 @@
+
+$main-white: #FEFCF3; 
+$main-purple: #7C58D3;
+$main-pink: #ff47a2;
+$main-green: #68B984; 
+$secondary-purple: #EBE5F7; 
+$main-yellow: #FED049;
+$main-gray: #abb8c3;
+
+$head-font: 'Nunito', sans-serif;
+$body-font: 'Lato', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-white;
+
+    h2{
+        font-size: 3rem;
+        font-family: $head-font;
+        color:$main-purple;
+    }
+
+    h3{
+        font-size: 2rem;
+        font-family: $head-font;
+        text-align: center;
+    }
+
+    p{
+        font-family: $body-font;
+    }
+}
+
+#toTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: $main-purple;
+  color: $main-white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+#toTopBtn:hover {
+  background-color: #555;
+}
+
+
+a{
+    text-decoration: none;
+    color: $main-white;
+}
+
+.nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $main-purple;
+    font-size: 30px;
+    font-family: $head-font;
+    font-weight: bold;
+    z-index: 999;
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 20px;
+        img{
+      max-width: 100px;
+      width: 100%;
+   } 
+
+   span{
+        color: $main-yellow;
+    }
+   
+    }
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    
+    li{
+        padding: 14px 16px;
+    }
+}
+
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-content{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+    top: 30vh;
+   z-index: 4;
+
+   h1{
+    font-family: $head-font;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+   }
+
+   p{
+     font-family: $body-font;
+     font-size: 18px;
+   }
+}
+
+
+.about-background-left{
+    width: 35%;
+    position: absolute;
+    bottom: 2%;
+    left: -5%;
+
+    #pink-bg{
+        width: 100%;
+    }
+
+    #white-pig-bg{
+        width: 100%;
+        position: absolute;
+        left: 10%;
+        top: 15%;
+         z-index: 3;
+    }
+   }
+
+   .about-background-right{
+    width: 35%;
+    position: absolute;
+    bottom: 18%;
+    right: -5%;
+
+    #yellow-bg{
+        width: 100%;
+    }
+
+    #grey-pig-bg{
+        width: 100%;
+        position:absolute;
+        top: -10%;
+        z-index: 3;
+        filter: contrast(150%) brightness(90%);
+    }
+   }
+
+   .rotate{
+    animation: rotating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  animation-timing-function: linear;
+   }
+
+@keyframes rotating{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.requirements-section{
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    position: relative;
+    margin-top: 100px;
+    display:grid;
+    grid-template-columns: auto 45% 3% 45% auto;
+    grid-column-gap: 0px;
+    grid-row-gap:10px;
+
+.requirements-left{
+    grid-column: 2/span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    .requirements-title{
+        margin-bottom: 10px;
+        font-family: $head-font;
+    }
+    .requirements-introduction{
+        margin-bottom: 10px;
+        font-family: $body-font;
+    }
+
+   .requirements-accordion {
+    background-color: $main-white;
+    border:none;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  margin-right: 5px;
+  margin-top:5px;
+  outline: none;
+  font-family: $head-font;
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+
+.active, .requirements-accordion:hover {
+  color: $main-purple;
+}
+
+
+.requirements-accordion:after {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    content: "\f063";
+    font-size: 1.2rem;
+    color: $main-white;
+    width: 40px;
+    height: 40px;
+    border-radius:8px;
+    background-color: $main-purple;
+    float: right;
+    margin-left: 5px;
+
+
+}
+
+.active:after {
+  content: "\f062";
+}
+
+.requirements-panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  border-bottom: 3px solid $main-gray;
+  font-family: $body-font;
+} 
+
+}
+.requirements-right{
+    grid-column: 4/span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow:hidden;
+
+    
+}
+.requirements-pics{
+    display:flex;
+
+     #requirements-pic1{
+        width: 100%;
+        position: absolute;
+        left: 15%;
+        top:15%;
+        border-radius: 50%;
+        z-index:2;
+    }
+
+   
+
+     #requirements-pic2{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top:15%;
+        z-index:1;
+       
+    }
+}
+
+}
+
+.gallery-section{
+    text-align: center;
+    padding: 5rem 20px;
+    background-color: $main-white;
+
+    #cards{
+        width:100%vw;
+        overflow: hidden;
+        
+
+        .responsive{
+              padding: 0 10px;
+  float: left;
+  width: 24.99999%;
+
+
+  .gallery{
+    border: 1px solid #ccc;
+   background-color: $main-purple;
+   &:hover{
+        background-color: $main-yellow;
+        
+    }
+
+    img {
+  width: 100%;
+  height: auto;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+  
+  }
+
+        }
+
+
+        @media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+    }
+         
+}
+
+
+
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+
+    .contact-section__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .contact-section__cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:100%;
+    height:100%;
+}
+}
+
+.card-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $main-gray;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 50px;
+    width:40%;
+    height: 40%;
+    margin: 10px;
+    transition: 0.3s;
+
+    &::before{
+         display: flex;
+        justify-content: center;
+        align-items: center;
+        font: var(--fa-font-solid);
+        content: "";
+        font-size: 2rem;
+        color: $main-purple;
+        width: 80px;
+        height: 80px;
+        background-color: $secondary-purple;
+        position: absolute;
+        top: -40px;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    &:hover{
+        border-color: $main-purple;
+        &::before{
+            background-color: $main-purple;
+            color: $main-white;
+        }
+    }
+
+}
+
+ #phone-card::before{
+         content: "\f095";
+    }
+
+     #email-card::before{
+         content: "\f0e0";
+    }
+
+     #address-card::before{
+         content: "\f3c5";
+    }
+
+     #hour-card::before{
+         content: "\f017";
+    }
+
+footer{
+    color: $main-purple;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    margin-top: 100px;
+    background-color: $main-white;
+    border-top: 4px solid $main-purple;
+    a{
+        text-decoration: none;
+        color: $main-purple;
+    }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, .caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+
+  video{
+position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  }
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+//   background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: $main-purple;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: $main-yellow;
+  color: black;
+}
+
